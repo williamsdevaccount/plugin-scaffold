@@ -2,6 +2,9 @@ Save time and headaches, and create a more easily maintainable [enqueuer](http:/
 This canonical version can serve as a reference, or a starting point all on its own.
 
 #### Get it
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/enqueuer-land/plugin-scaffold.svg)](https://greenkeeper.io/)
+
 Clone this `$ git clone http://github.com/enqueuer-land/plugin-scaffold` or download as zip file.
 
 #### Rename it
