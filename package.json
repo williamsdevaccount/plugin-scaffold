@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "all": "npm run clean && npm run lint && npm run build && npm run test",
+    "all": "rm generatedFile.json || npm run clean && npm run lint && npm run build && npm run checkInstall && npm run test",
+    "checkInstall": "nqr -p my-plugin -c conf/nqr.yml -l `pwd` && nqr -f my-plugin -c conf/nqr.yml -l `pwd`",
     "build": "tsc",
     "test": "nqr -l `pwd` conf/nqr.yml",
     "clean": "rm -rf dist",
@@ -19,7 +20,6 @@
   "keywords": [
     "enqueuer",
     "nqr",
-    "sqs",
     "plugin"
   ],
   "author": "Virgs",

@@ -1,6 +1,7 @@
 import {MySubscription} from './my-subscription';
 import {MyPublisher} from './my-publisher';
 import {MainInstance, PublisherModel, PublisherProtocol, SubscriptionModel, SubscriptionProtocol} from 'enqueuer-plugins-template';
+import {MyReportFormatter} from './my-formatter';
 
 //Enqueuer demands a 'entryPoint' method in the index file to the plugin work correctly
 export function entryPoint(mainInstance: MainInstance): void {
@@ -19,5 +20,7 @@ export function entryPoint(mainInstance: MainInstance): void {
         .addAlternativeName('alternativeName') //Optional. Set it to help enqueuer users. Set it if your plugin has alias
         .setLibrary('main-dependency-name');  //Optional. Set it to help enqueuer users
     mainInstance.protocolManager.addProtocol(myPublisher);
+
+    mainInstance.reportFormatterManager.addReportFormatter(() => new MyReportFormatter(), 'my-plugin');
 
 }
