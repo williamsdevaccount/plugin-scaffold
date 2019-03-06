@@ -1,0 +1,14 @@
+publishers:
+-   type: my-plugin
+    onMessageReceived:
+        assertions:
+        -   expect: data
+            toBeEqualTo: `someValue`
+subscriptions:
+-   type: my-plugin
+    onMessageReceived:
+        assertions:
+        -   name: received
+            expectToBeDefined: `asd`
+        -   name: number
+            expectToBeDefined: 123
